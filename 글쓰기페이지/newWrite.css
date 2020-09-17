@@ -1,0 +1,34 @@
+body {
+    text-align: center;
+    /* padding-left: 20%;
+    padding-right: 20%; */
+}
+
+#background {
+    text-align: left;
+    background-color: rgb(175, 210, 245);
+    padding: 50px;
+    margin: 50px;
+}
+
+text {
+    padding-left: 20px;
+}
+
+h1, h2{
+    display: inline; 
+    padding-right: 20px;
+}
+
+div {
+    padding-bottom: 20px;
+}
+
+#cb1, #cb2, #cb3 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff;
+    position: relative;
+    top: 3px;
+}

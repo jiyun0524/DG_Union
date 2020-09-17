@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>학과 검색하기</title>
+</head>
+<body>
+    <h1>학과 선택하기</h1>
+    <p id = "category"></p>
+    <form>
+        <input type = "BUTTON" value="" onclick="onclick_button()">
+    </form>
+</body>
+</html>
+
+<script>
+    first = ["경영대학", "사회대학", "공과대학"]
+
+    second_management = ["경영학부", "회계세무학부"]
+    second_society = ["언론학부", "경제통상학부"]
+    second_engnieering = ["컴퓨터공학부", "전자전기공학부"]
+
+    third_management = ["경영학전공", "관광경영학전공"]
+    third_accounting = ["회계학전공", "세무학전공"]
+
+    third_journalism = ["언론영상학전공", "광고홍보학전공"]
+    third_economy = ["국제통상학전공", "경제금융학전공", "전자무역학전공"]
+
+    third_computer = ["컴퓨터공학전공", "게임모바일공학전공"]
+    third_electronic = ["전자공학전공", "전기에너지공학전공"]
+
+    function select_department(){
+        document.getElementById("category").innerHTML = "dd";
+    }
+
+    function onclick_button(){
+        document.getElementById("category").innerHTML = second_society;
+    }
+</script>

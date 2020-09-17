@@ -1,0 +1,594 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <meta charset="utf-8" />
+        <title>Contact</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(
+                to top,
+                rgba(20, 20, 20, 0) 10%,
+                rgba(20, 20, 20, 0.25) 25%,
+                rgba(20, 20, 20, 0.5) 50%,
+                rgba(20, 20, 20, 0.6) 75%,
+                rgba(20, 20, 20, 0.9) 100%
+            ),
+            url("images/1.jpg");
+            opacity: 0.9;
+        }
+
+        header {
+            margin: auto 0;
+            width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0px;
+            margin-bottom: 100px;
+        }
+        header span {
+            font-size: larger;
+            color: white;
+            font-weight: 800;
+            font-size: 20px;
+        }
+        .header_column {
+            display: flex;
+            justify-content: space-around;
+        }
+        .header_section {
+            margin: 0px 15px;
+        }
+        .banner {
+            position: relative;
+            display: flex;
+            width: 100%;
+            max-width: 1100px;
+            margin: 20px;
+            height: 600px;
+            justify-content: space-between;
+            align-items: center;
+            background: rgb(154, 72, 10);
+            padding: 20px;
+        }
+        .banner .contact {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0 0 75px;
+        }
+        .banner .contact form {
+            position: relative;
+            width: 100%;
+        }
+        .banner .contact form h2 {
+            color: #fff;
+            font-size: 2em;
+            font-weight: 500;
+            margin-top: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 40px;
+        }
+        .banner .contact form .inputbox {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .banner .contact form .inputbox:last-child {
+            margin-bottom: 0px;
+        }
+        .banner .contact form .inputbox input,
+        textarea {
+            position: relative;
+            background: transparent;
+            outline: none;
+            border: none;
+            width: 100%;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 40px;
+            padding-bottom: 10px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 300;
+            resize: none;
+        }
+        .banner .contact form .inputbox textarea {
+            height: 100px;
+        }
+        .banner .contact form .inputbox input[type="submit"] {
+            padding: 15px 30px;
+            margin-top: -20px;
+            width: 150px;
+            background: rgb(247, 172, 48);
+            color: #fff;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: 700;
+            text-transform: uppercase;
+            outline: none;
+            border: none;
+            letter-spacing: 4px;
+        }
+        .banner .contact form .inputbox input[type="submit"]:focus {
+            background: #1bfaad;
+            color: #111;
+        }
+        .banner .contact form .inputbox span {
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+            font-weight: 300;
+            display: inline-block;
+            pointer-events: none;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.5);
+            transition: all 0.2s;
+        }
+        .banner .contact form .inputbox input:focus ~ span,
+        .banner .contact form .inputbox textarea:focus ~ span,
+        .banner .contact form .inputbox input:valid ~ span,
+        .banner .contact form .inputbox textarea:valid ~ span {
+            transform: translateY(-24px);
+            color: #1bfaad;
+            font-size: 14px;
+        }
+        .banner .contact form .inputbox input:focus,
+        .banner .contact form .inputbox textarea:focus,
+        .banner .contact form .inputbox input:valid,
+        .banner .contact form .inputbox textarea:valid {
+            border-bottom-color: #fff;
+        }
+        .banner .imgbox {
+            position: relative;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .banner .imgbox:before {
+            content: "";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(247, 172, 48);
+            transform-origin: bottom;
+            transform: skewX(-25deg) translateX(10%);
+        }
+        .banner .imgbox img {
+            position: absolute;
+            bottom: 0;
+            max-height: 95%;
+        }
+        @media (max-width: 991px) {
+            .banner .contact {
+            width: 100%;
+            padding: 0 50px;
+            }
+            .banner .contact form {
+            width: 100%;
+            max-width: 500px;
+            padding: 0;
+            }
+            .banner .imgbox {
+            display: none;
+            }
+        }
+
+        h3 {
+            font-size: 25;
+        }
+        </style>
+    </head>
+
+    <body>
+        <header class="header">
+        <a href="home.html">
+            <div class="header_column" style="font-family: 'CookieRunOTF-Bold'">
+            <span>MajorIn</span>
+            </div>
+        </a>
+        <div class="header_column">
+            <div class="header_section">
+            <span>자유 게시판</span>
+            </div>
+            <div class="header_section">
+            <span> 질문 게시판 </span>
+            </div>
+            <div class="header_section">
+            <span>취업 게시판</span>
+            </div>
+        </div>
+        <div class="header_column">
+            <span>로그인</span>
+            <span>&nbsp|&nbsp</span>
+            <span>회원가입</span>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="contact">
+        <form>
+            <h2>학과를 골라주세요.</h2>
+            <div style="height: 300;">
+                <h3>단과대학을 선택하세요</h3>
+                    <select id = "largeCategory" name="largeCategory" style="font-size: 25; width:250px">
+                    <option value="">전체</option>
+                </select>
+                <h3>학부를 선택하세요</h3>
+                    <select id = "middleCategory" name="middleCategory" style="font-size: 25; width:250px">
+                    <option value="">전체</option>
+                </select>
+                <h3>상세 학과를 선택하세요</h3>
+                    <select id = "smallCategory" name="smallCategory" style="font-size: 25; width:250px">
+                    <option value="">전체</option>
+                </select>
+            </div>
+            <button style="width: 100; height: 50; background-color: yellow; font-size: 20; font-weight: bold;"  id = "btnSubmit" onclick="Category_submit();">SEND</button>
+        </form>
+        </div>
+    <div class="imgbox"></div>
+    </div>
+    </body>
+</html>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        
+        var largeCategoryArray = new Array();
+        var largeCategoryObject = new Object();
+        
+        largeCategoryObject = new Object();
+        largeCategoryObject.large_category_id = "1";
+        largeCategoryObject.large_category_name = "A";
+        largeCategoryArray.push(largeCategoryObject);
+        
+        largeCategoryObject = new Object();
+        largeCategoryObject.large_category_id = "2";
+        largeCategoryObject.large_category_name = "B";
+        largeCategoryArray.push(largeCategoryObject);
+
+        largeCategoryObject = new Object();
+        largeCategoryObject.large_category_id = "3";
+        largeCategoryObject.large_category_name = "C";
+        largeCategoryArray.push(largeCategoryObject);
+        
+        var middleCategoryArray = new Array();
+        var middleCategoryObject = new Object();
+        
+        //A에 해당하는 middle category 리스트
+        middleCategoryObject = new Object();
+        middleCategoryObject.large_category_id = "1";
+        middleCategoryObject.middle_category_id = "1"
+        middleCategoryObject.middle_category_name = "A-1"    
+        middleCategoryArray.push(middleCategoryObject);
+        
+        middleCategoryObject = new Object();
+        middleCategoryObject.large_category_id = "1";
+        middleCategoryObject.middle_category_id = "2"
+        middleCategoryObject.middle_category_name = "A-2"    
+        middleCategoryArray.push(middleCategoryObject);
+        
+        middleCategoryObject = new Object();
+        middleCategoryObject.large_category_id = "1";
+        middleCategoryObject.middle_category_id = "3"
+        middleCategoryObject.middle_category_name = "A-3"    
+        middleCategoryArray.push(middleCategoryObject);
+        
+        //B에 해당하는 middle category 리스트
+        middleCategoryObject = new Object();
+        middleCategoryObject.large_category_id = "2";
+        middleCategoryObject.middle_category_id = "1"
+        middleCategoryObject.middle_category_name = "B-1"    
+        middleCategoryArray.push(middleCategoryObject);
+        
+        middleCategoryObject = new Object();
+        middleCategoryObject.large_category_id = "2";
+        middleCategoryObject.middle_category_id = "2"
+        middleCategoryObject.middle_category_name = "B-2"    
+        middleCategoryArray.push(middleCategoryObject);
+        
+        middleCategoryObject = new Object();
+        middleCategoryObject.large_category_id = "2";
+        middleCategoryObject.middle_category_id = "3"
+        middleCategoryObject.middle_category_name = "B-3"    
+        middleCategoryArray.push(middleCategoryObject);
+
+        //C에 해당하는 middle category 리스트
+        middleCategoryObject = new Object();
+        middleCategoryObject.large_category_id = "3";
+        middleCategoryObject.middle_category_id = "1"
+        middleCategoryObject.middle_category_name = "C-1"    
+        middleCategoryArray.push(middleCategoryObject);
+        
+        middleCategoryObject = new Object();
+        middleCategoryObject.large_category_id = "3";
+        middleCategoryObject.middle_category_id = "2"
+        middleCategoryObject.middle_category_name = "C-2"    
+        middleCategoryArray.push(middleCategoryObject);
+        
+        middleCategoryObject = new Object();
+        middleCategoryObject.large_category_id = "3";
+        middleCategoryObject.middle_category_id = "3"
+        middleCategoryObject.middle_category_name = "C-3"    
+        middleCategoryArray.push(middleCategoryObject);
+
+        var smallCategoryArray = new Array();
+        var smallCategoryObject = new Object();
+
+        //A-1에 해당하는 middle category 리스트
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "1";
+        smallCategoryObject.middle_category_id = "1"
+        smallCategoryObject.small_category_id = "1"
+        smallCategoryObject.small_category_name = "A-1-1"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "1";
+        smallCategoryObject.middle_category_id = "1"
+        smallCategoryObject.small_category_id = "2"
+        smallCategoryObject.small_category_name = "A-1-2"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "1";
+        smallCategoryObject.middle_category_id = "1"
+        smallCategoryObject.small_category_id = "3"
+        smallCategoryObject.small_category_name = "A-1-3"    
+        smallCategoryArray.push(smallCategoryObject);
+
+        //A-2에 해당하는 middle category 리스트
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "1";
+        smallCategoryObject.middle_category_id = "2"
+        smallCategoryObject.small_category_id = "1"
+        smallCategoryObject.small_category_name = "A-2-1"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "1";
+        smallCategoryObject.middle_category_id = "2"
+        smallCategoryObject.small_category_id = "2"
+        smallCategoryObject.small_category_name = "A-2-2"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "1";
+        smallCategoryObject.middle_category_id = "2"
+        smallCategoryObject.small_category_id = "3"
+        smallCategoryObject.small_category_name = "A-2-3"    
+        smallCategoryArray.push(smallCategoryObject);
+
+        //A-3에 해당하는 middle category 리스트
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "1";
+        smallCategoryObject.middle_category_id = "3"
+        smallCategoryObject.small_category_id = "1"
+        smallCategoryObject.small_category_name = "A-3-1"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "1";
+        smallCategoryObject.middle_category_id = "3"
+        smallCategoryObject.small_category_id = "2"
+        smallCategoryObject.small_category_name = "A-3-2"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "1";
+        smallCategoryObject.middle_category_id = "3"
+        smallCategoryObject.small_category_id = "3"
+        smallCategoryObject.small_category_name = "A-3-3"    
+        smallCategoryArray.push(smallCategoryObject);
+
+        //B-1에 해당하는 middle category 리스트
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "2";
+        smallCategoryObject.middle_category_id = "1"
+        smallCategoryObject.small_category_id = "1"
+        smallCategoryObject.small_category_name = "B-1-1"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "2";
+        smallCategoryObject.middle_category_id = "1"
+        smallCategoryObject.small_category_id = "2"
+        smallCategoryObject.small_category_name = "B-1-2"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "2";
+        smallCategoryObject.middle_category_id = "1"
+        smallCategoryObject.small_category_id = "3"
+        smallCategoryObject.small_category_name = "B-1-3"    
+        smallCategoryArray.push(smallCategoryObject);
+
+        //B-2에 해당하는 middle category 리스트
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "2";
+        smallCategoryObject.middle_category_id = "2"
+        smallCategoryObject.small_category_id = "1"
+        smallCategoryObject.small_category_name = "B-2-1"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "2";
+        smallCategoryObject.middle_category_id = "2"
+        smallCategoryObject.small_category_id = "2"
+        smallCategoryObject.small_category_name = "B-2-2"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "2";
+        smallCategoryObject.middle_category_id = "2"
+        smallCategoryObject.small_category_id = "3"
+        smallCategoryObject.small_category_name = "B-2-3"    
+        smallCategoryArray.push(smallCategoryObject);
+
+        //B-3에 해당하는 middle category 리스트
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "2";
+        smallCategoryObject.middle_category_id = "3"
+        smallCategoryObject.small_category_id = "1"
+        smallCategoryObject.small_category_name = "B-3-1"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "2";
+        smallCategoryObject.middle_category_id = "3"
+        smallCategoryObject.small_category_id = "2"
+        smallCategoryObject.small_category_name = "B-3-2"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "2";
+        smallCategoryObject.middle_category_id = "3"
+        smallCategoryObject.small_category_id = "3"
+        smallCategoryObject.small_category_name = "B-3-3"    
+        smallCategoryArray.push(smallCategoryObject);
+
+        //C-1에 해당하는 middle category 리스트
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "3";
+        smallCategoryObject.middle_category_id = "1"
+        smallCategoryObject.small_category_id = "1"
+        smallCategoryObject.small_category_name = "C-1-1"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "3";
+        smallCategoryObject.middle_category_id = "1"
+        smallCategoryObject.small_category_id = "2"
+        smallCategoryObject.small_category_name = "C-1-2"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "3";
+        smallCategoryObject.middle_category_id = "1"
+        smallCategoryObject.small_category_id = "3"
+        smallCategoryObject.small_category_name = "C-1-3"    
+        smallCategoryArray.push(smallCategoryObject);
+
+        //C-2에 해당하는 middle category 리스트
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "3";
+        smallCategoryObject.middle_category_id = "2"
+        smallCategoryObject.small_category_id = "1"
+        smallCategoryObject.small_category_name = "C-2-1"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "3";
+        smallCategoryObject.middle_category_id = "2"
+        smallCategoryObject.small_category_id = "2"
+        smallCategoryObject.small_category_name = "C-2-2"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "3";
+        smallCategoryObject.middle_category_id = "2"
+        smallCategoryObject.small_category_id = "3"
+        smallCategoryObject.small_category_name = "C-2-3"    
+        smallCategoryArray.push(smallCategoryObject);
+
+        //C-3에 해당하는 middle category 리스트
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "3";
+        smallCategoryObject.middle_category_id = "3"
+        smallCategoryObject.small_category_id = "1"
+        smallCategoryObject.small_category_name = "C-3-1"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "3";
+        smallCategoryObject.middle_category_id = "3"
+        smallCategoryObject.small_category_id = "2"
+        smallCategoryObject.small_category_name = "C-3-2"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        smallCategoryObject = new Object();
+        smallCategoryObject.large_category_id = "3";
+        smallCategoryObject.middle_category_id = "3"
+        smallCategoryObject.small_category_id = "3"
+        smallCategoryObject.small_category_name = "C-3-3"    
+        smallCategoryArray.push(smallCategoryObject);
+        
+        var largeCategorySelectBox = $("select[name='largeCategory']");
+
+        for(var i=0;i<largeCategoryArray.length;i++){
+            largeCategorySelectBox.append("<option value='"+largeCategoryArray[i].large_category_id+"'>"+largeCategoryArray[i].large_category_name+"</option>");
+        }
+
+        //*********** 1depth카테고리 선택 후 2depth 생성 START ***********
+        $(document).on("change","select[name='largeCategory']",function(){
+            // window.alert("첫번째 인식성공");
+            //두번째 셀렉트 박스를 삭제 시킨다.
+            var middleCategorySelectBox = $("select[name='middleCategory']");
+            middleCategorySelectBox.children().remove(); //기존 리스트 삭제
+            var smallCategorySelectBox = $("select[name='smallCategory']");
+            smallCategorySelectBox.children().remove(); //기존 리스트 삭제
+            
+            //선택한 첫번째 박스의 값을 가져와 일치하는 값을 두번째 셀렉트 박스에 넣는다.
+            $("#largeCategory option:selected").each(function(){
+                var selectlargeValue = $('select#largeCategory').val(); //large category 에서 선택한 값
+                middleCategorySelectBox.append("<option value=''>전체</option>");
+                smallCategorySelectBox.append("<option value=''>전체</option>");
+                for(var i=0;i<middleCategoryArray.length;i++){
+                    if(selectlargeValue == middleCategoryArray[i].large_category_id){
+                        middleCategorySelectBox.append("<option value='"+middleCategoryArray[i].middle_category_id+"'>"+middleCategoryArray[i].middle_category_name+"</option>");
+                    }
+                }
+            });
+        });
+        // *********** 1depth카테고리 선택 후 2depth 생성 END ***********
+        
+        $(document).on("change","select[name='middleCategory']",function(){
+            // window.alert("두번째 인식성공");
+            //세번째 셀렉트 박스를 삭제 시킨다.
+            var smallCategorySelectBox = $("select[name='smallCategory']");
+            smallCategorySelectBox.children().remove(); //기존 리스트 삭제
+            
+            //선택한 두번째 박스의 값을 가져와 일치하는 값을 세번째 셀렉트 박스에 넣는다.
+            $("#middleCategory option:selected").each(function(){
+                var selectlargeValue = $('select#largeCategory').val(); //middle category 에서 선택한 값
+                var selectmiddleValue = $('select#middleCategory').val();
+                smallCategorySelectBox.append("<option value=''>전체</option>");
+                for(var i=0;i<smallCategoryArray.length;i++){
+                    if(selectlargeValue == smallCategoryArray[i].large_category_id && selectmiddleValue == smallCategoryArray[i].middle_category_id){
+                        smallCategorySelectBox.append("<option value='"+smallCategoryArray[i].small_category_id+"'>"+smallCategoryArray[i].small_category_name+"</option>");
+                    }
+                }
+            });
+
+            // $('#btnSubmit').click(function Category_submit(){
+            //     alert(selectlargeValue + " " + selectmiddleValue + " " + selectsmallValue);
+            // })
+        });
+
+        $('#btnSubmit').click(function Category_submit(){
+            var selectsmallValue = $('select#smallCategory').val();
+
+            if(selectsmallValue == true){
+                alert(selectlargeValue + " " + selectmiddleValue + " " + selectsmallValue);
+            }
+            else{
+                alert('학과가 선택되지 않았습니다.');
+            }            
+        })
+    });
+</script>
